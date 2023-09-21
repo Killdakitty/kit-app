@@ -28,6 +28,7 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 
 //POST
+app.use('/api/recipes', require('./routes/api/recipes'))
 
 
 
