@@ -2,7 +2,7 @@ const Recipe = require('../../models/Recipe')
 
 
 
-
+//*CREATE
 async function create(req, res) {
     // console.log('[From POST handler]', req.body)
     try {
@@ -19,7 +19,24 @@ async function create(req, res) {
     }
 }
 
-async function history(req,res){
+//*Edit
+async function editrecipe(req,res){
+    try{
+const recipe= await Recipe.findByIdAndUpdate(req.recipe._id);
+console.log(recipe);
+
+res.json(recipe)
+res.redirect("/")
+    }
+    catch(e){
+        console.log(error);
+        res.status(400).json(error)
+    }
+}
+
+
+//* all recipe
+async function allrecipes(req,res){
     try{
 const recipes = await Recipe
 .find({})
@@ -32,6 +49,6 @@ res.status(400).json({msg: e.message})
 }
 
 module.exports = {
-    create, history
+    create, allrecipes,editrecipe
    
 }

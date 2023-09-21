@@ -10,6 +10,11 @@ export function createRecipe(recipe){
 export function getAllRecipes(){
   return sendRequest(`${BASE_URL}`, 'GET');}
 
+  export function editRecipe(recipe){
+    return sendRequest(`${BASE_URL}`, 'POST', recipe);}
+
+  
+
 
     /*--- Helper Functions ---*/
 

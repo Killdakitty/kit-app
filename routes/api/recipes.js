@@ -7,12 +7,12 @@ const ensureLoggedIn=require('../../config/ensureLoggedIn')
 //POST
 router.post('/', recipesCtrl.create)
 
-//GET /api/recipes/history
-router.get('/', recipesCtrl.history)
+//GET /api/recipes/allrecipe
+router.get('/', recipesCtrl.allrecipes)
 
 //GET /api/recipes/get
 // router.get('/allrecipes', recipesCtrl.index)
-
+router.put('/', recipesCtrl.editrecipe)
 
 
 module.exports=router
