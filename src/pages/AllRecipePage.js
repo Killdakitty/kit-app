@@ -1,19 +1,12 @@
 // import { checkToken } from "../utilities/users-service";
 import { useEffect, useState } from "react";
 import { getAllRecipes, editRecipe } from "../utilities/recipes-api";
-
-
+import { Link } from "react-router-dom";
 
 function AllRecipePage() {
   const [recipes, setRecipes] = useState(null);
   const [showInput, setShowInput] = useState(false);
-  const [formData, setFormData]= useState({
-    title: "",
-    recipe: ""
-  })
-
-
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllRecipes();
@@ -23,22 +16,8 @@ function AllRecipePage() {
     fetchData();
   }, []);
 
+  
 
-  const handleSubmit=async(e)=>{
-e.preventDefault();
-try{
-const userFormData= {...formData}
-const updateRecipe=await editRecipe(userFormData)
-
-}catch(error){
-console.log("error in edit");
-}
-  }
-
-
-  const handleChange=async(e)=>{
-      setFormData({...formData, [e.target.name]: e.target.value})}
-   
   // const handleCheckToken = async () => {
   //   const expDate = await checkToken();
   //   console.log(expDate);
@@ -55,44 +34,10 @@ console.log("error in edit");
               <li>
                 {recipe.title}
                 <div>{recipe.recipe}</div>
-                <button onClick={() => setShowInput(!showInput)}>update</button>
-<form          onSubmit={handleSubmit}         style={{display: showInput ? "block": "none", backgroundColor:'white'}}>
-                <input value={formData.title} name="title"
-                  type="text"
-                  // onKeyDown={(e) => {
-                  //   if (e.key === "Enter") {
-                  //    handleChange(e)
-                  //     // editTodoText(todo.id, e);
-                  //     setShowInput(false);
-                  //   }
-                  // }}
+                <button>
+<Link to={`/recipes/${recipe._id}`} >Update</Link></button>
 
-                  onChange={handleChange}
-                >
-
-                </input>
-
-
-<input
-                  value={formData.recipe} name="recipe"
-                  type="text" 
-                  // onKeyDown={(e) => {
-                  //   if (e.key === "Enter") {
-                  //    handleChange(e)
-
-                  //     // editTodoText(todo.id, e);
-                  //     setShowInput(false);
-                  //   }
-                  // }}
-                  onChange={handleChange}
-
-
-                >
-                
-
-                </input>
-<button type="submit" >submit</button>
-                </form>
+<button>delete</button>
                 {/* <button>Delete</button> */}
               </li>
             </div>

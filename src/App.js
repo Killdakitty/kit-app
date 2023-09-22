@@ -4,6 +4,7 @@ import NewRecipePage from './pages/NewRecipePage';
 import AuthPage from './pages/AuthPage';
 import NavBar from './components/NavBar';
 import AllRecipePage from './pages/AllRecipePage';
+import UpdateRecipe from './pages/UpdateRecipe'
 
 import { getUser } from './utilities/users-service';
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/recipes/new' element={ <NewRecipePage /> }/>
         <Route path='/allrecipes' element={ <AllRecipePage /> }/>
+        <Route path="/recipes/:id" element={<UpdateRecipe/>}/>
       </Routes>
       </>
      : 

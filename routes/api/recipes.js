@@ -12,7 +12,11 @@ router.get('/', recipesCtrl.allrecipes)
 
 //GET /api/recipes/get
 // router.get('/allrecipes', recipesCtrl.index)
-router.put('/', recipesCtrl.editrecipe)
+router.put('/:id', recipesCtrl.editrecipe)
+
+
+//GET
+router.get('/:id', recipesCtrl.getrecipe)
 
 
 module.exports=router

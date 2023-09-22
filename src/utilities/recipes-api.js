@@ -10,9 +10,12 @@ export function createRecipe(recipe){
 export function getAllRecipes(){
   return sendRequest(`${BASE_URL}`, 'GET');}
 
-  export function editRecipe(recipe){
-    return sendRequest(`${BASE_URL}`, 'POST', recipe);}
+  export function editRecipe(recipe, id){
+    return sendRequest(`${BASE_URL}/${id}`, 'PUT', recipe);}
 
+    export function getRecipe(id){
+      console.log(id);
+      return sendRequest(`${BASE_URL}/${id}`, 'GET');}
   
 
 
