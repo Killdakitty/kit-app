@@ -14,8 +14,13 @@ export function getAllRecipes(){
     return sendRequest(`${BASE_URL}/${id}`, 'PUT', recipe);}
 
     export function getRecipe(id){
-      console.log(id);
       return sendRequest(`${BASE_URL}/${id}`, 'GET');}
+
+      export function deleteRecipe(id){
+        return sendRequest(`${BASE_URL}/${id}`, 'DELETE');}
+  
+
+   
   
 
 

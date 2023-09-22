@@ -54,5 +54,6 @@ async function checkToken(req, res) {
 module.exports = {
     create,
     login,
-    checkToken
+    checkToken,
+    
 }

@@ -1,12 +1,13 @@
 // import { checkToken } from "../utilities/users-service";
 import { useEffect, useState } from "react";
-import { getAllRecipes, editRecipe } from "../utilities/recipes-api";
-import { Link } from "react-router-dom";
+import { getAllRecipes, deleteRecipe } from "../utilities/recipes-api";
+import { Link, useNavigate } from "react-router-dom";
 
 function AllRecipePage() {
   const [recipes, setRecipes] = useState(null);
-  const [showInput, setShowInput] = useState(false);
-  
+  const navigate = useNavigate();
+  // const [showInput, setShowInput] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllRecipes();
@@ -14,9 +15,28 @@ function AllRecipePage() {
       setRecipes(data);
     };
     fetchData();
-  }, []);
+  }, [recipes]);
 
-  
+  // function handleChange(evt) {
+  //   setRecipes({ ...recipes, [evt.target.name]: evt.target.value });
+  // }
+
+  async function handleDelete(id) {
+    // evt.preventDefault();
+    try {
+      // const newData = { title:formData.title, recipe:formData.recipe };
+      const delRecipe = await deleteRecipe(id);
+      const recipeCopy = [...recipes];
+      const matchrecipe = recipeCopy.findIndex((recipe) => 
+        recipe._id === id
+      );
+      recipeCopy.splice(matchrecipe, 1);
+      setRecipes(recipeCopy);
+      navigate("/allrecipes");
+    } catch (error) {
+      console.log("error in delete");
+    }
+  }
 
   // const handleCheckToken = async () => {
   //   const expDate = await checkToken();
@@ -34,10 +54,18 @@ function AllRecipePage() {
               <li>
                 {recipe.title}
                 <div>{recipe.recipe}</div>
+                {/* <div>{recipe._id}</div> */}
                 <button>
-<Link to={`/recipes/${recipe._id}`} >Update</Link></button>
+                  <Link to={`/recipes/${recipe._id}`}>Update</Link>
+                </button>
 
-<button>delete</button>
+                <button
+                  onClick={() => {
+                    handleDelete(recipe._id);
+                  }}
+                >
+                  delete
+                </button>
                 {/* <button>Delete</button> */}
               </li>
             </div>
@@ -48,41 +76,3 @@ function AllRecipePage() {
 }
 
 export default AllRecipePage;
-
-// import {useState} from 'react';
-
-// function Todo(props){
-//     const {todo, completeTodo, editTodoText,deleteTodo}=props;
-//     const [showInput, setShowInput]= useState(false);
-//     return(
-// <div>
-//     {/* todo text with the on click */}
-// <li onClick={()=>setShowInput(!showInput)}>{todo.text}</li>
-// {/* edit text input */}
-// <input type="text"
-// onKeyDown={(e)=>{
-//     if (e.key === "Enter"){
-//         editTodoText(todo.id, e);
-//         setShowInput(false);
-//     }}
-//     }
-// //if show input is true, then show  block, else none
-// style={{display: showInput ? "block": "none", backgroundColor:'blue'}} />
-
-// {/* ceheck input  */}
-// <label>
-//     Completed
-//     <input type="checkbox"
-//      checked={todo.completed}
-//      onChange={()=> completeTodo(todo.id)}
-//      />
-// {/* delete button */}
-// </label>
-// <button onClick={()=>deleteTodo(todo.id)}> Delete</button>
-
-// </div>
-
-//     );
-// }
-
-// export default Todo;

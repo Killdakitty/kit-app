@@ -31,6 +31,20 @@ async function editrecipe(req, res) {
     res.status(400).json(error);
   }
 }
+//*Delete
+async function deleterecipe(req, res) {
+  try {
+    const recipe = await Recipe.findByIdAndDelete(req.params.id)
+    ;
+    // console.log(req.recipe._id);
+    res.json("Recipe Deleted!!!");
+    
+    // res.redirect("/allrecipes");
+  }catch (e) {
+    console.log(error);
+    res.status(400).json(error);
+  }}
+
 
 //* all recipe
 async function allrecipes(req, res) {
@@ -58,5 +72,6 @@ module.exports = {
   create,
   allrecipes,
   editrecipe,
-  getrecipe
+  getrecipe,
+  deleterecipe
 };
