@@ -46,7 +46,7 @@ async function deleterecipe(req, res) {
   }}
 
 
-//* all recipe
+//* find all recipe
 async function allrecipes(req, res) {
   try {
     const recipes = await Recipe.find({}).sort();
@@ -57,7 +57,7 @@ async function allrecipes(req, res) {
   }
 }
 
-//* all recipe
+//* find a recipe
 async function getrecipe(req, res) {
     try {
       const recipe = await Recipe.findById(req.params.id);

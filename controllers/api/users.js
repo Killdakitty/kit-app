@@ -26,6 +26,47 @@ async function create(req, res) {
     }
 }
 
+//update user function 
+async function update(req, res){
+    const {id} = req.params
+    console.log(req.body)
+    try{
+      console.log(req.user)
+      const dbUser = await User.findById(req.user._id)
+      console.log('OLD password',dbUser)
+      const match = await bcrypt.compare(req.body.password, dbUser.password)
+  
+  if(!match){
+    console.log('USER', req.body)
+    res.status(400).json("Password Error")
+    return
+  }else{
+    req.body.password = await bcrypt.hash(req.body.newpassword, 6)
+     delete req.body.newpassword
+     console.log('USER', req.body)
+  }
+      const user = await User.findByIdAndUpdate(req.user._id, req.body, {new: true})
+  
+      res.json(user)
+  
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  //delete user function 
+  async function deleteUser(req, res){
+  
+    try{
+  
+      const user = await User.findByIdAndDelete(req.user._id)
+  
+  
+       res.json('user deleted')
+    }catch(e){
+      console.log(e)
+    }
+  }
 
 async function login(req, res) {
     try {
@@ -55,5 +96,7 @@ module.exports = {
     create,
     login,
     checkToken,
+    update,
+  deleteUser,
     
 }

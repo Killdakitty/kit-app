@@ -14,5 +14,10 @@ router.post('/login', usersCtrl.login);
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken);
 
 
+router.delete('/delete',usersCtrl.deleteUser)
+
+router.put('/update',ensureLoggedIn, usersCtrl.update)
+
+
 
 module.exports = router;
