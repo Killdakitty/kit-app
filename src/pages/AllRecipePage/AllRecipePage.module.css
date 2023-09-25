@@ -1,0 +1,33 @@
+.AllRecipePage {
+  height: 100%;
+  display: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+
+/* .AllRecipePage h3 {
+  margin-top: 4vmin;
+  text-align: center;
+  color: var(--text-light);
+  cursor: pointer;
+} */
+
+
+/* .AllRecipePage {
+
+    height: 100%;
+    display: table-row-group;
+    grid-template-columns: 1.6fr 3.5fr 3fr;
+    grid-template-rows: 1fr;
+    background-color: var(--white);
+    border-radius: 2vmin;
+  }
+
+  .AllRecipePage .aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vmin 2vmin;
+  } */

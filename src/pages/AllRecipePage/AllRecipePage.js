@@ -1,7 +1,8 @@
 // import { checkToken } from "../utilities/users-service";
 import { useEffect, useState } from "react";
-import { getAllRecipes, deleteRecipe } from "../utilities/recipes-api";
+import { getAllRecipes, deleteRecipe } from "../../utilities/recipes-api";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "./AllRecipePage.module.css"
 
 function AllRecipePage() {
   const [recipes, setRecipes] = useState(null);
@@ -44,7 +45,7 @@ function AllRecipePage() {
   // };
   console.log(recipes);
   return (
-    <div>
+    <main className={styles.AllRecipePage}>
       <h1>All Recipe Page</h1>
 
       {recipes &&
@@ -74,7 +75,7 @@ function AllRecipePage() {
             </div>
           );
         })}
-    </div>
+   </main>
   );
 }
 

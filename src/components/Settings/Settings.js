@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateInfo, deleteUser } from "../utilities/users-api";
+import { updateInfo, deleteUser } from "../../utilities/users-api";
 
 function Settings({ user, setUser }) {
   const [formData, setFormData] = useState({

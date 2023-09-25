@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { editRecipe, getRecipe } from "../utilities/recipes-api";
+import { editRecipe, getRecipe } from "../../utilities/recipes-api";
 import { useParams, useNavigate } from "react-router-dom";
-
+import styles from "../UpdateRecipePage/UpdateRecipePage.module.css"
 
 function UpdateRecipe() {
   const [formData, setFormData] = useState(null);
@@ -36,7 +36,8 @@ const navigate = useNavigate()
   };
 
   return (
-    <div>
+    <div className={styles.UpdateRecipePage}> 
+      <br></br>
       <form onSubmit={handleSubmit}>
         <input
           value={formData?.title}
@@ -52,7 +53,7 @@ const navigate = useNavigate()
 
           onChange={handleChange}
         ></input>
-
+<br/>
         <input
           value={formData?.recipe}
           name="recipe"

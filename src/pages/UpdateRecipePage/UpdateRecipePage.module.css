@@ -1,0 +1,29 @@
+.UpdateRecipePage {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    text-align: center;
+  }
+
+  .UpdateRecipePage input {
+    margin-top: 1vmin;
+    text-align: center;
+    color: var(--text-light);
+    cursor: pointer;
+    width: 200%;
+    font-size:20px;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300;
+    padding:10px;
+
+  }
+
+  .UpdateRecipePage button{
+    
+    background-color: darkcyan;
+    width: 200px;
+    margin-left: 10%;
+    
+        
+  }
+

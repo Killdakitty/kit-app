@@ -1,4 +1,4 @@
-import { createRecipe } from "../utilities/recipes-api";
+import { createRecipe } from "../../utilities/recipes-api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

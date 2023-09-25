@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NewRecipePage from './pages/NewRecipePage';
-import AuthPage from './pages/AuthPage';
-import NavBar from './components/NavBar';
-import AllRecipePage from './pages/AllRecipePage';
-import UpdateRecipePage from "./pages/UpdateRecipePage"
-import Settings from './components/Settings'
-import { getUser } from './utilities/users-service';
+import NewRecipePage from '../NewRecipePage/NewRecipePage';
+import AuthPage from '../AuthPage/AuthPage';
+import NavBar from '../../components/NavBar/NavBar';
+import AllRecipePage from '../AllRecipePage/AllRecipePage';
+import UpdateRecipePage from "../UpdateRecipePage/UpdateRecipePage"
+import Settings from '../../components/Settings/Settings'
+import { getUser } from '../../utilities/users-service';
 
 import './App.css';
 
