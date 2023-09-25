@@ -36,8 +36,9 @@ const navigate = useNavigate()
   };
 
   return (
-    <div className={styles.UpdateRecipePage}> 
-      <br></br>
+    <main className={styles.UpdateRecipePage}>
+    <div > 
+      <br/>
       <form onSubmit={handleSubmit}>
         <input
           value={formData?.title}
@@ -71,6 +72,9 @@ const navigate = useNavigate()
         <button type="submit">submit</button>
       </form>
     </div>
+    
+    
+</main>
   );
 }
 

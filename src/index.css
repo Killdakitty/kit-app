@@ -92,8 +92,8 @@ p.error-message {
 
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5vmin;
   color: var(--text-light);
 }
 
@@ -121,7 +121,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: darkcyan;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
