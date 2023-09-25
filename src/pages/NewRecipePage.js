@@ -1,11 +1,15 @@
 import { createRecipe } from "../utilities/recipes-api";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewRecipePage() {
   const [recipes, setRecipes] = useState({
     title: " ",
+    ingridents: " ",
     recipe: " ",
   });
+const navigate = useNavigate()
+
 
   function handleChange(evt) {
     setRecipes({ ...recipes, [evt.target.name]: evt.target.value });
@@ -15,6 +19,7 @@ function NewRecipePage() {
     evt.preventDefault();
     try {
       await createRecipe(recipes);
+      navigate('/allrecipes')
     } catch {
       console.log("HandleSubmit ERROR");
     }
@@ -26,6 +31,11 @@ function NewRecipePage() {
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input type="text" name="title" onChange={handleChange} required />
+
+
+        <label>ingridents</label>
+        <input type="text" name="ingridents" onChange={handleChange} required />
+
 
         <label>recipe</label>
         <input type="text" name="recipe" onChange={handleChange} required />
