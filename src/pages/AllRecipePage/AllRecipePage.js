@@ -46,18 +46,20 @@ function AllRecipePage() {
   console.log(recipes);
   return (
     <main className={styles.AllRecipePage}>
-      <h1>All Recipe Page</h1>
+      <h1>~All Recipes~</h1>
 
       {recipes &&
         recipes.map((recipe) => {
           return (
             <div>
         
-                <h3>title: {recipe.title}</h3>
+                <h3> {recipe.title}</h3>
+                
+              {/* <img>{recipe.image}</img> */}
 
-               <ul>ingridents:{recipe.ingridents}</ul> 
+               <ul>ingridents: {recipe.ingridents}</ul> 
                
-                <ol>recipe:{recipe.recipe}</ol>
+                <ol>recipe: {recipe.recipe}</ol>
                 {/* <div>{recipe._id}</div> */}
                 <button>
                   <Link to={`/recipes/${recipe._id}`}>Update</Link>

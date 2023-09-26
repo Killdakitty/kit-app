@@ -10,18 +10,24 @@ function NavBar({ user, setUser }) {
   return (
     <nav className={styles.NavBar}>
        <span>Welcome, {user.name}</span>{" "}
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       
-      &nbsp; | &nbsp;
+      {/* &nbsp; | &nbsp; */}
       <Link to="/allrecipes">All Recipes</Link>
-      &nbsp; | &nbsp;
-      <Link to="/recipes/new">New Recipe</Link> 
-      &nbsp; | &nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      
-      <Link to="" onClick={handleLogOut}>
-        Logout
-      </Link>
-      &nbsp; | &nbsp;
+      <Link to="/recipes/new">New Recipe</Link> 
+
+     
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
       <Link to='/settings'>Settings</Link> 
+      
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+     <Link to="" onClick={handleLogOut}>
+       Logout
+     </Link>
 
     </nav>
   );

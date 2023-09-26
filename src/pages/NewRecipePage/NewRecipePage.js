@@ -31,7 +31,11 @@ const navigate = useNavigate()
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input type="text" name="title" onChange={handleChange} required />
+{/* 
+        <label>image</label>
+        <input type="image"  src="img_submit.gif" name="image" onChange={handleChange}/> */}
 
+      
 
         <label>ingridents</label>
         <input type="text" name="ingridents" onChange={handleChange} required />

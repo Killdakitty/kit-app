@@ -1,11 +1,34 @@
 .AllRecipePage {
   height: 100%;
   display: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+
   background-color: var(--white);
 }
 
+.AllRecipePage h3{
+  text-align: center;
+  font-family: 'Cormorant Garamond';
+}
+
+.AllRecipePage ul{
+  
+max-width: 1300px;
+max-height: 400px;
+text-align: left;
+
+}
+
+.AllRecipePage ol{
+  max-width: 1300px;
+  max-height: 400px;
+  text-align: left;
+  font: normal 15px Muli, sans-serif;
+  
+  }
+
+  
 /* .AllRecipePage h3 {
   margin-top: 4vmin;
   text-align: center;

@@ -1,10 +1,10 @@
 # Introduction
-This project is used to find kitchen recipes,users can create their login and upload their kitchen recipes, it can find recipes by filtering. 
+This project is used to find kitchen recipes,users can create their login and upload their kitchen recipes, it can find recipes by filtering. It is inspired from my love of cooking and messinessed in organization so i want to create a site where you can organize your recipes.
 
 
 
 # Technologies Used: 
-
+vscode 
 
 
 
