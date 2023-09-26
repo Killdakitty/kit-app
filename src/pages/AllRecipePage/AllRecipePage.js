@@ -73,7 +73,8 @@ function AllRecipePage() {
                   delete
                 </button>
                 {/* <button>Delete</button> */}
-           
+           <br/>
+           <br/>
             </div>
           );
         })}

@@ -1,4 +1,8 @@
 /* CSS Custom Properties */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;

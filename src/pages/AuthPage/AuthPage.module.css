@@ -7,9 +7,14 @@
     border-radius: 2vmin;
   }
 
-  .AuthPage h3 {
+  .AuthPage h1 {
     margin-top: 4vmin;
     text-align: center;
     color: var(--text-light);
-    cursor: pointer;
+    cursor: help;
+
   }
+
+  /* .AuthPage {
+
+  } */

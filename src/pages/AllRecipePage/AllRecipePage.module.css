@@ -1,9 +1,8 @@
 .AllRecipePage {
   height: 100%;
   display: column;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-
   background-color: var(--white);
 }
 
@@ -13,18 +12,19 @@
 }
 
 .AllRecipePage ul{
-  
-max-width: 1300px;
+
+max-width: 900px;
 max-height: 400px;
 text-align: left;
 
 }
 
 .AllRecipePage ol{
-  max-width: 1300px;
+  max-width: 1000px;
   max-height: 400px;
   text-align: left;
-  font: normal 15px Muli, sans-serif;
+  font: normal 15px Muli, sans-serif; 
+  
   
   }
 

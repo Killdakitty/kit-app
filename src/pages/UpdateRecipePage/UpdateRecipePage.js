@@ -55,7 +55,7 @@ const navigate = useNavigate()
           onChange={handleChange}
         ></input>
 <br/>
-        <input
+        <textarea
           value={formData?.recipe}
           name="recipe"
           type="text"
@@ -68,7 +68,7 @@ const navigate = useNavigate()
           //   }
           // }}
           onChange={handleChange}
-        ></input>
+        ></textarea>
         <button type="submit">submit</button>
       </form>
     </div>
