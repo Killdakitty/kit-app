@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--white);
+  margin-left: 10%;
 }
 
 .AllRecipePage h3{
@@ -24,9 +25,12 @@ text-align: left;
   max-height: 400px;
   text-align: left;
   font: normal 15px Muli, sans-serif; 
-  
-  
+
   }
+
+.AllRecipePage button{
+  margin-right: 10%;
+}
 
   
 /* .AllRecipePage h3 {

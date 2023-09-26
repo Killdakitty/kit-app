@@ -8,8 +8,7 @@ function NewRecipePage() {
     ingridents: " ",
     recipe: " ",
   });
-const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   function handleChange(evt) {
     setRecipes({ ...recipes, [evt.target.name]: evt.target.value });
@@ -19,7 +18,7 @@ const navigate = useNavigate()
     evt.preventDefault();
     try {
       await createRecipe(recipes);
-      navigate('/allrecipes')
+      navigate("/allrecipes");
     } catch {
       console.log("HandleSubmit ERROR");
     }
@@ -31,15 +30,12 @@ const navigate = useNavigate()
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input type="text" name="title" onChange={handleChange} required />
-{/* 
+        {/* 
         <label>image</label>
         <input type="image"  src="img_submit.gif" name="image" onChange={handleChange}/> */}
 
-      
-
         <label>ingridents</label>
         <input type="text" name="ingridents" onChange={handleChange} required />
-
 
         <label>recipe</label>
         <input type="text" name="recipe" onChange={handleChange} required />
