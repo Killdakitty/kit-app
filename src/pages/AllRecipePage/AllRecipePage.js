@@ -51,16 +51,17 @@ function AllRecipePage() {
       {recipes &&
         recipes.map((recipe) => {
           return (
-            <div>
+            <main>
         
                 <h3> {recipe.title}</h3>
                 
               {/* <img>{recipe.image}</img> */}
 
-               <ul>ingridents: {recipe.ingridents}</ul> 
-               
-                <ol>recipe: {recipe.recipe}</ol>
+               <ul>Ingridents: {recipe.ingridents}</ul> 
+              
+                <ol>Recipe: {recipe.recipe}</ol>
                 {/* <div>{recipe._id}</div> */}
+                <div>
                 <button>
                   <Link to={`/recipes/${recipe._id}`}>Update</Link>
                 </button>
@@ -73,9 +74,10 @@ function AllRecipePage() {
                   delete
                 </button>
                 {/* <button>Delete</button> */}
+                </div>
            <br/>
            <br/>
-            </div>
+            </main>
           );
         })}
    </main>

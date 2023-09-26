@@ -38,7 +38,7 @@ function NewRecipePage() {
         <input type="text" name="ingridents" onChange={handleChange} required />
 
         <label>recipe</label>
-        <input type="text" name="recipe" onChange={handleChange} required />
+        <textarea type="text" name="recipe" onChange={handleChange} required />
         <button type="submit">Submit Recipe</button>
       </form>
     </div>
